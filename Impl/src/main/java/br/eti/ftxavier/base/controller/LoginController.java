@@ -1,4 +1,4 @@
-package org.gradle.example.simple.controller;
+package br.eti.ftxavier.base.controller;
 
 import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;

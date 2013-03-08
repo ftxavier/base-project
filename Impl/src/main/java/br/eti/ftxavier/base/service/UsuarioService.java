@@ -1,12 +1,13 @@
-package org.gradle.example.simple.service;
+package br.eti.ftxavier.base.service;
 
 import java.util.List;
 
-import org.gradle.example.simple.dao.UsuarioDao;
-import org.gradle.example.simple.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import br.eti.ftxavier.base.dao.UsuarioDao;
+import br.eti.ftxavier.base.model.Usuario;
 
 @Service
 public class UsuarioService {

@@ -15,7 +15,7 @@
 	</context-param>
 
 	<listener>
-	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	<filter>
@@ -43,12 +43,15 @@
 		<filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
 	</filter>
 
-<!-- 	<context-param> -->
-<!-- 		<param-name>br.com.caelum.vraptor.packages</param-name> -->
-<!-- 		<param-value> -->
-<!-- 			org.gradle.example.simple.controller -->
-<!-- 		</param-value> -->
-<!-- 	</context-param> -->
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<filter-mapping>
 		<filter-name>vraptor</filter-name>
@@ -56,6 +59,7 @@
 		<dispatcher>FORWARD</dispatcher>
 		<dispatcher>REQUEST</dispatcher>
 	</filter-mapping>
+
 
 	<session-config>
 		<session-timeout>30</session-timeout>

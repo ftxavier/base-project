@@ -1,4 +1,4 @@
-package org.gradle.example.simple.model;
+package br.eti.ftxavier.base.model;
 
 import java.io.Serializable;
 
@@ -31,5 +31,19 @@ public class Role implements Serializable {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder
+			.append("ID...............:").append(this.getId()).append("\n")
+			.append("Nome.............:").append(this.getName()).append("\n");
+		return stringBuilder.toString();
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.getId().equals(((Role)obj).getId());
 	}
 }

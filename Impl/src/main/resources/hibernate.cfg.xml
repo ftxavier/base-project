@@ -3,7 +3,7 @@
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
-		<mapping class="org.gradle.example.simple.model.Usuario" />
-		<mapping class="org.gradle.example.simple.model.Role" />
+		<mapping class="br.eti.ftxavier.base.model.Usuario" />
+		<mapping class="br.eti.ftxavier.base.model.Role" />
 	</session-factory>
 </hibernate-configuration>

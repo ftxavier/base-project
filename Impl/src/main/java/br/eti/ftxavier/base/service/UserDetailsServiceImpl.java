@@ -1,10 +1,8 @@
-package org.gradle.example.simple.service;
+package br.eti.ftxavier.base.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.gradle.example.simple.model.Role;
-import org.gradle.example.simple.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,13 +14,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.eti.ftxavier.base.model.Role;
+import br.eti.ftxavier.base.model.Usuario;
+
 @Service(value = "customUserDetailsService")
 @Transactional(readOnly = true, propagation = Propagation.REQUIRED)
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UsuarioService usuarioService;
-
+	
 	@Override
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException {

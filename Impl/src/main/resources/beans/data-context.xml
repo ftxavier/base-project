@@ -13,9 +13,9 @@
    	<context:annotation-config />
  	
 	<!-- Scans for application @Components to deploy -->
-	<context:component-scan base-package="org.gradle.example.simple.service" />
-	<context:component-scan base-package="org.gradle.example.simple.service.impl" />
-	<context:component-scan base-package="org.gradle.example.simple.dao" />
+	<context:component-scan base-package="br.eti.ftxavier.base.service" />
+	<context:component-scan base-package="br.eti.ftxavier.base.dao" />
+	<context:component-scan base-package="br.eti.ftxavier.base.util" />
  
  	<tx:annotation-driven transaction-manager="transactionManager" />
  	 	

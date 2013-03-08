@@ -12,10 +12,10 @@ repositories {
 }
 
 dependencies {
+	
+	//Tests
 	testCompile 'junit:junit:4.8.2'
 	testCompile 'com.h2database:h2:1.3.161'
-
-	compile 'commons-beanutils:commons-beanutils:1.8.3'
 
 	//VRaptor
 	compile 'br.com.caelum:vraptor:3.4.1'
@@ -25,15 +25,23 @@ dependencies {
 	compile 'org.hibernate:hibernate-entitymanager:3.6.10.Final'
 	compile 'org.hibernate:hibernate-c3p0:3.6.10.Final'
 	compile 'org.hibernate:hibernate-ehcache:3.6.10.Final'
-
-	//compile 'com.google.inject:guice:3.0'
+	
+	//Datasource
 	compile 'commons-dbcp:commons-dbcp:1.4'
 	compile 'mysql:mysql-connector-java:5.1.19'
+	
+	//Web base
 	compile 'javax.servlet:jstl:1.2'
 	providedCompile('javax.servlet:jsp-api:2.0') {
 		exclude module: 'servlet-api'  
 	}
 	providedCompile 'javax.servlet:servlet-api:2.5'
+	
+	//Sitemesh
+	compile 'opensymphony:sitemesh:2.4.2'
+	
+	//Aux
+	compile 'commons-beanutils:commons-beanutils:1.8.3'
 	compile 'commons-codec:commons-codec:1.6'
 	compile 'aspectj:aspectjrt:1.5.4'
 	compile 'aspectj:aspectjweaver:1.5.4'
@@ -52,6 +60,7 @@ dependencies {
 	compile 'org.springframework:spring-expression:3.1.2.RELEASE'
 	compile 'org.springframework:spring-oxm:3.1.2.RELEASE'
 
+	//Spring Security
 	compile 'org.springframework.security:spring-security-core:3.1.2.RELEASE'
 	compile 'org.springframework.security:spring-security-web:3.1.2.RELEASE'
 	compile 'org.springframework.security:spring-security-config:3.1.2.RELEASE'
@@ -63,6 +72,7 @@ eclipse {
 	wtp {
 		facet {
 			facet name : 'jst.web', version: '2.5'
+			facet name : 'java', version: '1.6'
 		}
 	}
 	project {

@@ -1,6 +1,6 @@
 package org.gradle.example.simple.test.util;
 
-import org.gradle.example.simple.model.Usuario;
+import br.eti.ftxavier.base.model.Usuario;
 
 public class TestUtil {
 

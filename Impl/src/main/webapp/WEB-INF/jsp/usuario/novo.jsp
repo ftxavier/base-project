@@ -9,16 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table border="1" bordercolor="red" cellspacing="2">
-	<tr>
-		<th>Login</th>
-		<th>Nome</th>
-	</tr>
-	<c:forEach items="${usuarioList}" var="usuario">
-		<tr>
-	    	<td>${usuario.login}</td><td>${usuario.nome} </td>
-	    </tr>
-	</c:forEach>
-</table>
+<form action="<c:url value="/usuario/save"/>" method="post">
+<jsp:include page="form.jsp"/>
+</form>
 </body>
 </html>

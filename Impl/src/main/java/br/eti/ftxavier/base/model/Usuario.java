@@ -1,4 +1,4 @@
-package org.gradle.example.simple.model;
+package br.eti.ftxavier.base.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
@@ -140,19 +140,14 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("ID...............:").append(this.getId())
-				.append("\n").append("Login............:")
-				.append(this.getLogin()).append("\n")
-				.append("Nome.............:").append(this.getNome())
-				.append("\n").append("Senha............:")
-				.append(this.getSenha()).append("\n")
-				.append("Expiração Conta..:")
-				.append(this.getAccountExpiration()).append("\n")
-				.append("Expiração Senha..:")
-				.append(this.getPasswordExpiration()).append("\n")
-				.append("Conta Bloquqada..:").append(this.isAccountLocked())
-				.append("\n").append("Conta Habilitada.:")
-				.append(this.isEnabled()).append("\n");
+		stringBuilder
+			.append("ID...............:").append(this.getId()).append("\n")
+			.append("Login............:").append(this.getLogin()).append("\n")
+			.append("Nome.............:").append(this.getNome()).append("\n")
+			.append("Expiração Conta..:").append(this.getAccountExpiration()).append("\n")
+			.append("Expiração Senha..:").append(this.getPasswordExpiration()).append("\n")
+			.append("Conta Bloquqada..:").append(this.isAccountLocked()).append("\n")
+			.append("Conta Habilitada.:").append(this.isEnabled()).append("\n");
 		return stringBuilder.toString();
 	}
 }

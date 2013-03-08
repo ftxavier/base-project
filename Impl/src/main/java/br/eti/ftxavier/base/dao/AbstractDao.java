@@ -1,4 +1,4 @@
-package org.gradle.example.simple.dao;
+package br.eti.ftxavier.base.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

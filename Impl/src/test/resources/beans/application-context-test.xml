@@ -20,7 +20,7 @@
 	</bean>
  	
 	<!-- Scans for application @Components to deploy -->
-	<context:component-scan base-package="org.gradle.example.simple.service" />
-	<context:component-scan base-package="org.gradle.example.simple.dao" />
+	<context:component-scan base-package="br.eti.ftxavier.base.service" />
+	<context:component-scan base-package="br.eti.ftxavier.base.dao" />
 	
 </beans>

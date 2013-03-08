@@ -1,9 +1,7 @@
-package org.gradle.example.simple.controller;
+package br.eti.ftxavier.base.controller;
 
 import java.util.List;
 
-import org.gradle.example.simple.model.Usuario;
-import org.gradle.example.simple.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import br.com.caelum.vraptor.Get;
@@ -11,18 +9,29 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.eti.ftxavier.base.model.Role;
+import br.eti.ftxavier.base.model.Usuario;
+import br.eti.ftxavier.base.service.RoleService;
+import br.eti.ftxavier.base.service.UsuarioService;
+import br.eti.ftxavier.base.util.UserSession;
 
 @Resource
 @Path("/usuario/")
 public class UsuarioController {
 	
 	private Result result;
+	private UserSession userSession;
 	
 	@Autowired
 	private UsuarioService usuarioService;
 	
-	public UsuarioController(Result result) {
+	@Autowired
+	private RoleService roleService;
+	
+	
+	public UsuarioController(Result result, UserSession userSession) {
 		this.result = result;
+		this.userSession = userSession;
 	}
 
 	@Get @Path("/")
@@ -32,7 +41,11 @@ public class UsuarioController {
 	
 	@Get @Path("/{usuario.id}/edit")
 	public Usuario edit(Usuario usuario) {
-		return usuarioService.findById(usuario.getId());
+		List<Role> roles = roleService.list();
+		usuario = usuarioService.findById(usuario.getId()); 
+		roles.removeAll(usuario.getRoles());
+		result.include("roles", roles);
+		return usuario;
 	}
 	
 	@Post @Path("/save")
@@ -43,6 +56,8 @@ public class UsuarioController {
 	
 	@Get @Path("/new")
 	public Usuario novo() {
+		List<Role> roles = roleService.list();
+		result.include("roles", roles);
 		return new Usuario();
 	}
 }

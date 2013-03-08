@@ -8,10 +8,11 @@
 
 	<http use-expressions="true">
 		<intercept-url pattern="/login" access="permitAll" />
+		<intercept-url pattern="/resources/**" access="permitAll" />
 		<intercept-url pattern="/usuario/**" access="hasRole('ROLE_USER_ADMIN')" />
 		<intercept-url pattern="/**" access="isAuthenticated()" />
 		<form-login login-page="/login" default-target-url="/" always-use-default-target="false" authentication-failure-url="/login/error" />
-		<logout logout-success-url="/login" logout-url="/logout" />
+		<logout logout-success-url="/login" logout-url="/logout" invalidate-session="true" />
 	</http>
 
 	<global-method-security pre-post-annotations="enabled" />

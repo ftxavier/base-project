@@ -1,9 +1,10 @@
-package org.gradle.example.simple.dao;
+package br.eti.ftxavier.base.dao;
 
-import org.gradle.example.simple.model.Usuario;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
+
+import br.eti.ftxavier.base.model.Usuario;
 
 @Repository
 public class UsuarioDao extends AbstractDao<Usuario, Long> {
